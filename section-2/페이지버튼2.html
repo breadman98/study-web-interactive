@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<style>
+     body{
+          height:100vh;
+          transition:background 0.25s;
+     }
+     .control-Wrap{
+          position:relative;
+          top:40%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          text-align:center;
+     }
+     input{
+          font-size:20px;
+     }
+</style>
+<body>
+     <div class="control-Wrap">
+          <h1>1페이지</h1>
+          <button class="prev"> 이전 </button>
+          <button class="next"> 다음 </button>
+     </div>
+
+     <script>
+          const next = document.querySelector(".next");
+          const prev = document.querySelector(".prev");
+
+          const page = document.querySelector("h1");
+          const body = document.querySelector("body");
+
+          const bgColor = ["#85FFBD","#FFFB7D","#E0C3FC"];
+
+          let pageNum=1;
+          let pageLenght=3;
+
+
+          let randomIdx = Math.floor(Math.random()*3);
+          document.body.style.background = bgColor[randomIdx];
+          
+          next.addEventListener("click",function(){
+               if(pageNum<pageLenght){
+                    pageNum++;
+               }else{
+                    pageNum=1;
+               }
+               // page.innerHTML = `${pageNum}페이지`;
+               // document.body.style.background = bgColor[pageNum-1];
+               changeBgColor();
+          })
+
+          prev.addEventListener("click",function(){
+               if(pageNum>1){
+                    pageNum--;
+               }else{
+                    pageNum=pageLenght;
+               }
+               // page.innerHTML = `${pageNum}페이지`;
+               // document.body.style.background = bgColor[pageNum-1];
+               changeBgColor();
+          })
+
+          function changeBgColor(){
+               page.innerHTML = `${pageNum}페이지`;
+               document.body.style.background = bgColor[pageNum-1];
+          }
+
+     </script>
+</body>
+</html>
