@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          body{
+               height:100vh;
+               background: linear-gradient(to right,#0272a4, #f6a564)
+          }
+          .control-Wrap{
+               position:relative;
+               width:400px;
+               background-color:#e6e6e6;
+               padding:40px;
+               top:40%;
+               left:50%;
+               transform:translate(-50%,-50%);
+               text-align:center;
+               border-radius:20px;
+          }
+          input{
+               padding:10px 20px;
+               font-size:20px;
+               text-align:center;
+               max-width:170px;
+          }
+          button{
+               font-size:20px;
+               padding:8px 20px;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="control-Wrap">
+          <h3>숫자 맞추기</h3>
+          <p class="result-class">(1부터 10사이)</p>
+          <input type="number" min="1" max="10" value="" required/>
+          <button class="start-button">확인</button>
+          <button class="reset-button">리셋</button>
+     </div>
+
+
+     <script>
+          const startButton = document.querySelector(".control-Wrap .start-button");
+          const input = document.querySelector(".control-Wrap input");
+          const resultText = document.querySelector(".control-Wrap p");
+          const resetButton = document.querySelector(".control-Wrap .reset-button")
+
+          
+          const resultArr = ["업","다운","정답!"];
+          let answer = Math.floor(Math.random()*10)+1;
+
+          startButton.addEventListener("click",function(){
+               resultFunction();
+          })
+          resetButton.addEventListener("click",resetGame);
+
+
+          function resultFunction(){
+               const userInput = input.value;
+               
+               if(userInput==""){
+                    alert("number please");
+               }else{
+                    if(userInput < answer){
+                         resultText.innerHTML = resultArr[0];
+                     }
+                    else if(userInput > answer){
+                         resultText.innerHTML = resultArr[1];
+                     }
+                    else{
+                         resultText.innerHTML = resultArr[2];          
+                         setTimeout(resetGame,1000);
+                         
+                     }
+               }
+          }
+          
+          function resetGame(){
+               answer = Math.floor(Math.random()*10)+1;
+               input.value="";
+               resultText.innerHTML ="리셋되었습니다";
+               
+          }
+
+ 
+
+     </script>
+</body>
+</html>

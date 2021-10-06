@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          body{
+               height:100vh;
+          }
+          .control-Wrap{
+               position:relative;
+               width:400px;
+               background-color:#e6e6e6;
+               padding:40px;
+               top:50%;
+               left:50%;
+               transform:translate(-50%,-50%);
+               text-align:center;
+               border-radius:20px;
+          }
+          input{
+               font-size:20px;
+               text-align:center;
+               max-width:170px;
+               padding:10px 20px;
+          }
+          button{
+               font-size:20px;
+               padding:8px 15px;
+          }
+          
+     </style>
+</head>
+<body>
+     <div class="control-Wrap">
+          <h3>급여를 입력해보세요(만)</h3>
+          <input type="number" value="">
+          <button type="button" class="start-button">확인</button>
+
+          <p class="text">당신은 지금 얼마를 벌고 있을까요?</p>
+     </div>
+     
+
+
+     <script>
+          const input = document.querySelector("input")      
+          const text = document.querySelector(".text");
+
+
+          const button = document.querySelector(".start-button");
+
+          button.addEventListener("click",function(){
+               getResult();
+          });
+
+          let timer;
+
+          function getResult(){
+               clearInterval(timer);
+
+               value = input.value * 10000;
+               secValue = value / 365 / 24 / 60 / 60;
+               hourValue = value / 365 / 24 ;
+               
+               let secNum=0;
+               timer = setInterval(function(){
+                    secNum++;
+                    text.innerHTML = `${(secNum * secValue).toFixed(0)}원 
+                    <br> 1시간 당 ${(hourValue).toFixed(5)}원`;
+
+               },10)
+          }
+         
+     </script>
+</body>
+</html>

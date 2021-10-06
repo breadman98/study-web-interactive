@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          body{
+               overflow:hidden;
+          }
+          h1{
+               font-size:20px;
+          }
+          button{
+               font-style:20px;
+               padding:10px 30px;
+               cursor:pointer;
+          }
+          .arrow-Wrap{
+               margin:30px;
+          }
+          .arrow-Wrap img{
+               transition: all 500ms cubic-bezier(0.425, 0.015, 0.120, 0.770);
+               width:30%;
+          }
+     </style>
+
+</head>
+<body>
+     <button class="reset-button">리셋</button>
+     <button class="start-button">시작</button>
+     <h1>0deg</h1>
+     <div class="arrow-Wrap">
+          <img src="./img/up-arrow.svg" alt="arrow" class="arrow">
+     </div>
+
+
+     <script>
+          const resetButton = document.querySelector(".reset-button");
+          const startButton = document.querySelector(".start-button");
+
+          const h1 = document.querySelector("h1");
+          const arrow = document.querySelector(".arrow");
+          
+          
+          startButton.addEventListener("click", function(){
+               const startRotate = Math.round(Math.random()*360*2);
+               h1.innerText = `${startRotate}deg`;
+               arrow.style.transform = "rotate("+startRotate+"deg)";
+          })
+
+          resetButton.addEventListener("click",function(){
+               const resetRotate = 0;
+               h1.innerHTML = `${resetRotate}deg`;
+               arrow.style.transform = "rotate("+resetRotate+"deg)";
+          })
+     </script>
+</body>
+</html>
