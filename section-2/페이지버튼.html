@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<style>
+     body{
+          height:100vh;
+     }
+     .control-Wrap{
+          position:relative;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          text-align:center;
+     }
+     input{
+          font-size:20px;
+     }
+</style>
+<body>
+     <div class="control-Wrap">
+          <input type="number" placeholder="몇페이지?" required>
+          <h1>1페이지</h1>
+          <button class="prev"> 이전 </button>
+          <button class="next"> 다음 </button>
+     </div>
+
+     <script>
+          const next = document.querySelector(".next");
+          const prev = document.querySelector(".prev");
+          const input = document.querySelector("input");
+
+          const page = document.querySelector("h1");
+
+          let pageNum=1;
+
+
+          next.addEventListener("click",function(){
+               if(pageNum<input.value){
+                    pageNum++;
+               }else{
+                    pageNum=1;
+               }
+               page.innerHTML = `${pageNum}페이지`;
+               
+          })
+
+          prev.addEventListener("click",function(){
+               if(pageNum>1){
+                    pageNum--;
+               }else{
+                    pageNum=input.value;
+               }
+               page.innerHTML = `${pageNum}페이지`;
+          })
+
+     </script>
+</body>
+</html>
