@@ -61,7 +61,7 @@
 
 
           function resultFunction(){
-               const userInput = input.value;
+               let userInput = input.value;
                
                if(userInput==""){
                     alert("number please");
@@ -73,8 +73,9 @@
                          resultText.innerHTML = resultArr[1];
                      }
                     else{
-                         resultText.innerHTML = resultArr[2];          
-                         setTimeout(resetGame,1000);
+                         resultText.innerHTML = resultArr[2];           
+                         resetTime(); 
+                         setTimeout(resetGame,4000);
                          
                      }
                }
@@ -87,6 +88,23 @@
                
           }
 
+          function resetTime(){
+               // for(let i=3; i>0; i--){
+               //      setTimeout(function(){
+               //           resultText.innerHTML = `${i}초 뒤 리셋`;
+               //      },i*1000);
+               // }
+               setTimeout(function(){ 
+                    resultText.innerHTML = `3초 뒤 리셋`;
+               },1000);
+               setTimeout(function(){ 
+                    resultText.innerHTML = `2초 뒤 리셋`;
+               },2000);
+               setTimeout(function(){ 
+                    resultText.innerHTML = `1초 뒤 리셋`;
+               },3000);
+
+          }
  
 
      </script>
