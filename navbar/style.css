@@ -44,6 +44,7 @@ a{
 .navbar_menu li:hover{
      background-color:var(--accent-color);
      border-radius:4px;
+     transition: all 0.5s cubic-bezier(0.425, 0.015, 0.120, 0.770);
 }
 
 .navbar_icon{
