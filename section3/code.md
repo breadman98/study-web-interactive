@@ -27,9 +27,9 @@
 
 
         tagName{
-        ...
-        animation: rotateAni 15s ease infinite;
-        ...
+            ...
+            animation: rotateAni 15s ease infinite;
+            ...
         }
         @keyframes rotateAni{
             0%{
@@ -45,14 +45,14 @@
 
 
         tagName{
-        ..
-        opacity:0;
-        visibility:hidden
-        ..
+            ..
+            opacity:0;
+            visibility:hidden
+            ..
         }
         
         tagName.active{
-        opacity:1;
-        visibility:visible;
+            opacity:1;
+            visibility:visible;
         }
 
