@@ -20,7 +20,7 @@
 
 
 <h3>css</h3>
-
+> animation
         tagName{
         ...
         animation: rotateAni 15s ease infinite;
@@ -35,3 +35,16 @@
             }
         }
     
+> .active이용해서 효과 줬다 뻇다 할 때 주의할점
+        tagName{
+        ..
+        opacity:0;
+        visibility:hidden
+        ..
+        }
+        
+        tagName.active{
+        opacity:1;
+        visibility:visible;
+        }
+> opacity,visibilty 둘 다 해줘야 확실하고 안정적임
