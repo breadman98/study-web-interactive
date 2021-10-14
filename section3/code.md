@@ -20,17 +20,18 @@
 
 
 ###css
-    .class{
-    ...
-    animation: rotateAni 15s ease infinite;
-    ...
-    }
-    @keyframes rotateAni{
-        0%{
-            transform:rotate(0deg);
+
+        tagName{
+        ...
+        animation: rotateAni 15s ease infinite;
+        ...
         }
-        100%{
-            transform:rotate(360deg);
+        @keyframes rotateAni{
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+               transform:rotate(360deg);
+            }
         }
-    }
     
