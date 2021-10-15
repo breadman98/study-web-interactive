@@ -1,4 +1,4 @@
-`# 마우스 커서 따라다니는 물체 만들기`
+# ` 마우스 커서 따라다니는 물체 만들기`
 
   
     if(document.addEventListener){
