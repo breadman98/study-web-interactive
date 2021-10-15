@@ -22,5 +22,7 @@
         document.element('').style.top = mouseTop -10+"px";
         //위치잡아줌
     }
+    
+    
   
   
