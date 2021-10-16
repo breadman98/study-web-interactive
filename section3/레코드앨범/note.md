@@ -19,6 +19,8 @@
 
 # 메모
 
+<h2>js</h2>
+
 
     for(let i=0; i<pageLength; i++){
        (function(idx){
@@ -33,14 +35,20 @@
 
 즉시실행함수 : https://okayoon.tistory.com/entry/%EC%95%84%ED%8B%B0%ED%81%B4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-058-%EC%A6%89%EC%8B%9C-%EC%8B%A4%ED%96%89-%ED%95%A8%EC%88%98-IIFE-Immediately-Invoked-Function-Expression
 
+
+
     for(let i=0; i<pageLength; i++){
         button[i].addEventListener("click",()=>{
             cur_page = i;
             changePage();
         })
+        
 > 이벤트리스너로 한거
 
-
+------------------------------------------------------------------------------------------------------------------------
+      content.style.background = `linear-gradient(120deg,${bgColorArr[pageNum][0]},${bgColorArr[pageNum][1]})`
+      small_disk[pageNum].style.background = `${bgColorArr[pageNum][0]}`;
+>인덱스만 변수로 해주는게 아니라 배열전체를 변수로 해서 넣어줌. 
 <h2>css</h2>
 
 
@@ -61,7 +69,7 @@
                transform:rotate(360deg);
             }
         }
-    
+------------------------------------------------------------------------------------------------------------------------
 > .active이용해서 효과 줬다 뻇다 할 때 주의할점<br>
 > opacity,visibilty 둘 다 해줘야 확실하고 안정적임
 
