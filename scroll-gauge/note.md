@@ -7,8 +7,17 @@
     const 전체Y = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     
    > 현재위치 잡고,<br>
-   > 브라우저전체 높이 - 지금 딱 볼수있는화면높이 => 앞으로 남은 스크린의 높이 <br>
-   현재Y / 전체Y  => 이걸로 여태 지나간 화면에 대한 전체화면의 비율을 구한다. 여기에 *100 해주면 백분율 
+   > 전체높이 - 지금 딱 볼수있는화면높이 => 앞으로 남은 스크린의 높이 <br>
+   (현재Y / 전체Y)  => 이걸로 여태 지나간 화면에 대한 전체화면의 비율을 구한다. 여기에 *100 해주면 백분율 
+   
+  > <strong>scrollHeight</strong> : `ENTIRE content & padding (visible or not) `<br>
+  > 그냥 모든 콘텐트영역을 표시하는 토탈 높이
+  > 
+  > <strong>clientHeight</strong> : `VISIBLE content & padding`
+  > 보이는 부분 높이. 딱 유저가 보고있는 화면 자체
+  > 
+  > <strong>offsetHeight</strong> : `VISIBLE content & padding` ` +border` `+scrollbar`
+  > 얘는 스크롤하이트랑 같은데 차이점은 border,scrollbar,margin을 포함한다는것. 
     
 `css`
 
