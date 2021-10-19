@@ -17,7 +17,10 @@
   > 보이는 부분 높이. 딱 유저가 보고있는 화면 자체
   > 
   > <strong>offsetHeight</strong> : `VISIBLE content & padding` ` +border` `+scrollbar`<br>
-  > 얘는 스크롤하이트랑 같은데 차이점은 border,scrollbar,margin을 포함한다는것. 
+  > 얘는 스크롤하이트랑 같은데 차이점은 border,scrollbar,margin을 포함한다는것. <br>
+  > 
+  참고 : https://stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight
+    
     
 `css`
 
