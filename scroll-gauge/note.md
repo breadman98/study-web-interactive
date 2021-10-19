@@ -13,10 +13,10 @@
   > <strong>scrollHeight</strong> : `ENTIRE content & padding (visible or not) `<br>
   > 그냥 모든 콘텐트영역을 표시하는 토탈 높이
   > 
-  > <strong>clientHeight</strong> : `VISIBLE content & padding`
+  > <strong>clientHeight</strong> : `VISIBLE content & padding`<br>
   > 보이는 부분 높이. 딱 유저가 보고있는 화면 자체
   > 
-  > <strong>offsetHeight</strong> : `VISIBLE content & padding` ` +border` `+scrollbar`
+  > <strong>offsetHeight</strong> : `VISIBLE content & padding` ` +border` `+scrollbar`<br>
   > 얘는 스크롤하이트랑 같은데 차이점은 border,scrollbar,margin을 포함한다는것. 
     
 `css`
