@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 게이지</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .section{
+            width: 100vw;
+            height: 1000vh; 
+            background-color: #fafafa;
+        }
+        .section .text{
+             position:fixed;
+        }
+
+        
+        .progressbar {
+            position: fixed; 
+            height: 2px;
+            top: 0;
+            left: 0;
+            width: 100%; /*게이지가 변할 때 한 틱당 width가 100%의 단위로 변화*/
+            z-index: 1;
+        }
+        .progressbar .progress {
+            width: 0%; /*게이지 채워지는 효과를 width로 영역을 색칠해주는 원리로 구현한다 초기값 0*/
+            height: 2px;
+            transition: width 0.3s ease; 
+            background-color: #a00;
+        }
+    </style>
+</head>
+<body>
+   
+     <section class="section">
+          <div class="text">0%</div>
+     </section>
+
+     <div class="progressbar">
+          <div class="progress"></div>
+     </div>
+    
+     <script src="app.js"></script>
+</body>
+</html>
