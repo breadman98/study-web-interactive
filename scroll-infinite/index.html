@@ -1,0 +1,71 @@
+<!-- 
+<script>
+     const target = document.querySelector(".sc_infinity .list");
+     const breakList = 10;
+     let listCount = 0;
+
+     window.addEventListener("scroll",function(){
+          const currScroll = document.documentElement.scrollTop;
+          const totalScroll = document.documentElement.scrollHeight - window.outerHeight; 
+          console.log(currScroll,totalScroll);
+
+		
+
+		if(currScroll >= totalScroll){ // 문서 하단에 도착했다고 판단.
+			target.innerHTML = "hi";
+			
+			
+		}
+
+
+     })-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>유노코딩 무한스크롤</title>
+</head>
+<style>
+	body{
+		width:100%;
+		margin: 0;
+		padding:0;
+	}
+	.box1{
+		height:500px; background-color: tomato; color:white;
+
+	}
+	.box2{
+		height:500px; background-color: teal; color:white;
+	}
+	section .box:nth-child(2n-1){
+		height:500px; background-color: tomato; color:white;
+	}
+	section .box:nth-child(2n){
+		height:500px; background-color: teal; color:white;
+	}
+</style>
+<body>
+	<section>
+		<div class="box1">1번블록</div>
+		<div class="box2">2번블록</div>
+	</section>
+	
+	<script>
+		let count = 2;
+		window.addEventListener("scroll",function(){
+			if(this.innerHeight + this.scrollY >= document.documentElement.offsetHeight){ // document.documentElement.offsetHeight === document.body.offsetHeight
+				
+				const toAdd = document.createElement("div");
+				toAdd.classList.add("box");
+				toAdd.innerHTML =`${++count}번블록`; //toAdd.textContent = `${++count}번블록`;
+				document.querySelector("section").appendChild(toAdd);
+			}
+			console.log(this.innerHeight,this.scrollY,document.documentElement.offsetHeight);
+		})
+	</script>
+</body>
+</html>
