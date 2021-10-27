@@ -25,12 +25,12 @@
 `css`
 
     .progressbar{
-     position:fixed;
-     ...
+      position:fixed;
+      ...
       width:100%
       ...
     }
- >게이지가 변할 때 한 틱당 width가 100%의 단위로 변화 하게끔
+ > 게이지바의 전체 넓이를 100%로 꽉 채워줌. 진행률은 자식요소의 width를 채워주는 식으로 
 
     .progressbar .progress{
       width:0%;
