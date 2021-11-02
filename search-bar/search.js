@@ -13,4 +13,5 @@ const searchInput = document.querySelector(".search-box input");
 searchForm.addEventListener("submit",function(e){
      e.preventDefault();
      location.href="https://www.google.co.kr/search?q="+searchInput.value;
+     searchInput.value="";
 })
